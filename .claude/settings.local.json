@@ -9,7 +9,9 @@
       "Bash(powershell.exe:*)",
       "Bash(git config:*)",
       "WebSearch",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nPhase 1: Repository Setup & Skeleton\n\n- Created monorepo structure: frontend/, backend/, specs/\n- Added .gitignore with comprehensive exclusions\n- Created environment example files for frontend and backend\n- Defined dependencies: package.json and requirements.txt\n- Added comprehensive README with setup instructions\n- Included setup automation scripts \\(quick-start.bat, etc.\\)\n- Added specification and planning documents\n- Included Claude Code agents and skills configuration\n\nRepository structure ready for Phase 2 implementation.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git tag -a phase-1-setup -m \"Phase 1 Complete: Repository Setup & Skeleton\")"
     ]
   }
 }
