@@ -1,6 +1,8 @@
-# Todo Application
+# Todo Application - Phase 2 Complete
 
-A full-stack todo application with JWT authentication, built with FastAPI and Next.js.
+A secure, multi-user full-stack todo application with JWT authentication, built with FastAPI and Next.js.
+
+**Status**: ✅ Phase 2 Complete - All 7 user stories implemented and tested
 
 ## 🚀 Quick Start
 
@@ -50,8 +52,12 @@ A full-stack todo application with JWT authentication, built with FastAPI and Ne
 ## 📖 Documentation
 
 - **Setup Guide:** See [SETUP.md](SETUP.md) for detailed instructions
+- **Backend Documentation:** [backend/README.md](backend/README.md)
+- **Frontend Documentation:** [frontend/README.md](frontend/README.md)
 - **API Docs:** http://localhost:8000/docs (when backend is running)
-- **Constitution:** `.specify/memory/constitution.md`
+- **Specification:** [specs/001-frontend-phase2/spec.md](specs/001-frontend-phase2/spec.md)
+- **Implementation Plan:** [specs/001-frontend-phase2/plan.md](specs/001-frontend-phase2/plan.md)
+- **Tasks Breakdown:** [specs/001-frontend-phase2/tasks.md](specs/001-frontend-phase2/tasks.md)
 
 ## ✅ Features
 
@@ -109,25 +115,40 @@ pytest tests/ -v
 - Auth: Better Auth + JWT
 - Styling: Tailwind CSS
 - State: React hooks
+- Routes: /tasks, /tasks/new, /tasks/[id], /tasks/[id]/edit
 
 ## 📁 Project Structure
 
 ```
 todophs2/
-├── backend/
+├── backend/                 # FastAPI backend
 │   ├── app/
-│   │   ├── api/v1/          # API endpoints
-│   │   ├── core/            # Security & auth
-│   │   ├── models/          # Database models
+│   │   ├── api/v1/          # API endpoints (auth, todos)
+│   │   ├── core/            # Security & auth (JWT, bcrypt)
+│   │   ├── models/          # Database models (User, Todo)
 │   │   └── schemas/         # Pydantic schemas
-│   ├── tests/               # 55 tests
+│   ├── tests/               # 55 passing tests
 │   ├── alembic/             # Database migrations
-│   └── requirements.txt
-├── frontend/
-│   ├── app/                 # Next.js pages
+│   ├── requirements.txt     # Python dependencies
+│   └── README.md            # Backend documentation
+├── frontend/                # Next.js frontend
+│   ├── app/
+│   │   ├── (auth)/          # Public routes (login, signup)
+│   │   ├── (protected)/     # Protected routes (tasks)
+│   │   └── api/             # Better Auth API routes
 │   ├── components/          # React components
+│   │   ├── auth/            # Auth components
+│   │   ├── todos/           # Task components
+│   │   └── ui/              # UI components
 │   ├── lib/                 # API client & auth
-│   └── package.json
+│   ├── package.json         # Node dependencies
+│   └── README.md            # Frontend documentation
+├── specs/                   # Specification documents
+│   └── 001-frontend-phase2/
+│       ├── spec.md          # Feature specification
+│       ├── plan.md          # Implementation plan
+│       └── tasks.md         # Task breakdown
+├── history/                 # Prompt history records
 ├── SETUP.md                 # Detailed setup guide
 ├── quick-start.bat          # Automated setup
 ├── start-backend.bat        # Start backend server
@@ -200,11 +221,21 @@ See [SETUP.md](SETUP.md) for detailed troubleshooting guide.
 
 ## 📊 Status
 
+**Phase 2 Complete** - All user stories implemented:
+- ✅ US1: User Authentication (signup, signin, logout)
+- ✅ US2: View Personal Task List
+- ✅ US3: Create New Task
+- ✅ US4: View Single Task Details
+- ✅ US5: Update Existing Task
+- ✅ US6: Delete Task
+- ✅ US7: Toggle Task Completion
+
+**Quality Metrics**:
 - ✅ Backend: 55/55 tests passing
-- ✅ Authentication: Complete
-- ✅ Todo CRUD: Complete
 - ✅ Security: Constitution compliant
-- ✅ Documentation: Complete
+- ✅ User Isolation: 100% enforced
+- ✅ Documentation: Complete (root, backend, frontend)
+- ✅ Git Tags: phase-1-setup, phase-5-frontend-complete
 
 ## 🚀 Next Steps
 
