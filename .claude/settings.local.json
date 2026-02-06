@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specifyscriptsbashcreate-phr.sh:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(pip uninstall bcrypt -y)",
+      "Bash(git fetch --all --prune)",
+      "Bash(powershell.exe:*)",
+      "Bash(git config:*)",
+      "WebSearch",
+      "Bash(git add:*)"
+    ]
+  }
+}
