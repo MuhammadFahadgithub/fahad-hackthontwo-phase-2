@@ -21,14 +21,14 @@
 
 **Git Tag**: `phase-1-setup`
 
-- [ ] T001 Create monorepo folder structure: frontend/, backend/, specs/
-- [ ] T002 Create root .gitignore with node_modules, .env*, __pycache__, .venv
-- [ ] T003 [P] Create frontend/.env.example with NEXT_PUBLIC_API_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL
-- [ ] T004 [P] Create backend/.env.example with DATABASE_URL, BETTER_AUTH_SECRET, CORS_ORIGINS, JWT_ALGORITHM
-- [ ] T005 Create root README.md with project overview and setup instructions placeholder
-- [ ] T006 [P] Create frontend/package.json with Next.js 16+, TypeScript, Tailwind CSS, Better Auth dependencies
-- [ ] T007 [P] Create backend/requirements.txt with fastapi, sqlmodel, pyjwt, python-jose, psycopg2-binary, uvicorn
-- [ ] T008 Commit and push with tag phase-1-setup
+- [X] T001 Create monorepo folder structure: frontend/, backend/, specs/
+- [X] T002 Create root .gitignore with node_modules, .env*, __pycache__, .venv
+- [X] T003 [P] Create frontend/.env.example with NEXT_PUBLIC_API_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL
+- [X] T004 [P] Create backend/.env.example with DATABASE_URL, BETTER_AUTH_SECRET, CORS_ORIGINS, JWT_ALGORITHM
+- [X] T005 Create root README.md with project overview and setup instructions placeholder
+- [X] T006 [P] Create frontend/package.json with Next.js 16+, TypeScript, Tailwind CSS, Better Auth dependencies
+- [X] T007 [P] Create backend/requirements.txt with fastapi, sqlmodel, pyjwt, python-jose, psycopg2-binary, uvicorn
+- [X] T008 Commit and push with tag phase-1-setup
 
 **Checkpoint**: Repository structure ready, dependencies defined, ready for Phase 2
 
@@ -42,13 +42,13 @@
 
 **Dependencies**: Phase 1 complete
 
-- [ ] T009 Create backend/src/__init__.py (empty file for Python package)
-- [ ] T010 Create backend/src/database.py with Neon connection string from DATABASE_URL and SQLModel engine setup
-- [ ] T011 [P] Create backend/src/models/__init__.py
-- [ ] T012 [P] Create backend/src/models/task.py with Task SQLModel (id, title, description, completed, user_id, created_at, updated_at)
-- [ ] T013 Create backend/src/main.py with FastAPI app initialization and database startup (create_all tables)
-- [ ] T014 Test database connectivity by running uvicorn and checking logs for successful connection
-- [ ] T015 Commit and push with tag phase-2-backend-db
+- [X] T009 Create backend/src/__init__.py (empty file for Python package)
+- [X] T010 Create backend/src/database.py with Neon connection string from DATABASE_URL and SQLModel engine setup
+- [X] T011 [P] Create backend/src/models/__init__.py
+- [X] T012 [P] Create backend/src/models/task.py with Task SQLModel (id, title, description, completed, user_id, created_at, updated_at)
+- [X] T013 Create backend/src/main.py with FastAPI app initialization and database startup (create_all tables)
+- [X] T014 Test database connectivity by running uvicorn and checking logs for successful connection
+- [X] T015 Commit and push with tag phase-2-backend-db
 
 **Checkpoint**: Database connected, Task table created, FastAPI app runs
 
@@ -64,12 +64,12 @@
 
 **Maps to**: User Story 1 (User Authentication) - Backend part
 
-- [ ] T016 [P] Create backend/src/middleware/__init__.py
-- [ ] T017 Create backend/src/middleware/auth.py with JWT decode function using BETTER_AUTH_SECRET and HS256 algorithm
-- [ ] T018 Add get_current_user dependency in backend/src/middleware/auth.py that extracts Bearer token and returns user_id
-- [ ] T019 Add verify_user_id_match function in backend/src/middleware/auth.py that compares token user_id with path user_id (raises 403 if mismatch)
-- [ ] T020 Update backend/src/main.py to add CORS middleware with CORS_ORIGINS from environment
-- [ ] T021 Commit and push with tag phase-3-backend-api
+- [X] T016 [P] Create backend/src/middleware/__init__.py
+- [X] T017 Create backend/src/middleware/auth.py with JWT decode function using BETTER_AUTH_SECRET and HS256 algorithm
+- [X] T018 Add get_current_user dependency in backend/src/middleware/auth.py that extracts Bearer token and returns user_id
+- [X] T019 Add verify_user_id_match function in backend/src/middleware/auth.py that compares token user_id with path user_id (raises 403 if mismatch)
+- [X] T020 Update backend/src/main.py to add CORS middleware with CORS_ORIGINS from environment
+- [X] T021 Commit and push with tag phase-3-backend-api
 
 **Checkpoint**: JWT verification working, user_id enforcement ready, CORS configured
 
@@ -87,27 +87,27 @@
 
 ### Task List & Create (US2, US3)
 
-- [ ] T022 [P] Create backend/src/api/__init__.py
-- [ ] T023 [P] Create backend/src/api/tasks.py with APIRouter for /api/users/{user_id}/tasks
-- [ ] T024 [US2] Implement GET /api/users/{user_id}/tasks endpoint with JWT required, user_id match check, filter by user_id
-- [ ] T025 [US3] Implement POST /api/users/{user_id}/tasks endpoint with JWT required, user_id match check, create task with user_id from token
+- [X] T022 [P] Create backend/src/api/__init__.py
+- [X] T023 [P] Create backend/src/api/tasks.py with APIRouter for /api/users/{user_id}/tasks
+- [X] T024 [US2] Implement GET /api/users/{user_id}/tasks endpoint with JWT required, user_id match check, filter by user_id
+- [X] T025 [US3] Implement POST /api/users/{user_id}/tasks endpoint with JWT required, user_id match check, create task with user_id from token
 
 ### Task Detail, Update, Delete (US4, US5, US6)
 
-- [ ] T026 [US4] Implement GET /api/users/{user_id}/tasks/{task_id} endpoint with JWT required, ownership check (404 if not found or not owned)
-- [ ] T027 [US5] Implement PUT /api/users/{user_id}/tasks/{task_id} endpoint with JWT required, ownership check, update only owned tasks
-- [ ] T028 [US6] Implement DELETE /api/users/{user_id}/tasks/{task_id} endpoint with JWT required, ownership check, delete only owned tasks
+- [X] T026 [US4] Implement GET /api/users/{user_id}/tasks/{task_id} endpoint with JWT required, ownership check (404 if not found or not owned)
+- [X] T027 [US5] Implement PUT /api/users/{user_id}/tasks/{task_id} endpoint with JWT required, ownership check, update only owned tasks
+- [X] T028 [US6] Implement DELETE /api/users/{user_id}/tasks/{task_id} endpoint with JWT required, ownership check, delete only owned tasks
 
 ### Task Toggle Completion (US7)
 
-- [ ] T029 [US7] Implement PATCH /api/users/{user_id}/tasks/{task_id}/toggle endpoint with JWT required, ownership check, toggle completed field
+- [X] T029 [US7] Implement PATCH /api/users/{user_id}/tasks/{task_id}/toggle endpoint with JWT required, ownership check, toggle completed field
 
 ### Integration & Error Handling
 
-- [ ] T030 Update backend/src/main.py to include tasks router with prefix /api
-- [ ] T031 Add proper error responses: 401 for missing/invalid token, 403 for user_id mismatch, 404 for not found, 500 for server errors
-- [ ] T032 Test all endpoints with curl or Postman: verify JWT required, user isolation, proper status codes
-- [ ] T033 Commit and push with tag phase-4-backend-crud
+- [X] T030 Update backend/src/main.py to include tasks router with prefix /api
+- [X] T031 Add proper error responses: 401 for missing/invalid token, 403 for user_id mismatch, 404 for not found, 500 for server errors
+- [X] T032 Test all endpoints with curl or Postman: verify JWT required, user isolation, proper status codes
+- [X] T033 Commit and push with tag phase-4-backend-crud
 
 **Checkpoint**: All backend CRUD endpoints working, user isolation enforced, ready for frontend
 
@@ -125,56 +125,56 @@
 
 ### Project Setup & Better Auth (US1)
 
-- [ ] T034 Initialize Next.js 16+ project in frontend/ with TypeScript and Tailwind CSS (npx create-next-app@latest)
-- [ ] T035 Install Better Auth: npm install better-auth
-- [ ] T036 [P] Create frontend/src/lib/auth/better-auth.ts with Better Auth configuration (JWT secret, session settings)
-- [ ] T037 [P] Create frontend/src/lib/types/user.ts with User interface (id, email, name)
-- [ ] T038 [P] Create frontend/src/lib/types/task.ts with Task interface (id, title, description, completed, user_id, created_at, updated_at)
+- [X] T034 Initialize Next.js 16+ project in frontend/ with TypeScript and Tailwind CSS (npx create-next-app@latest)
+- [X] T035 Install Better Auth: npm install better-auth
+- [X] T036 [P] Create frontend/src/lib/auth/better-auth.ts with Better Auth configuration (JWT secret, session settings)
+- [X] T037 [P] Create frontend/src/lib/types/user.ts with User interface (id, email, name)
+- [X] T038 [P] Create frontend/src/lib/types/task.ts with Task interface (id, title, description, completed, user_id, created_at, updated_at)
 
 ### API Client (All User Stories)
 
-- [ ] T039 [P] Create frontend/src/lib/api/client.ts with base API client that attaches JWT from Better Auth to Authorization header
-- [ ] T040 [P] Create frontend/src/lib/api/auth.ts with signUp and signIn functions calling Better Auth
-- [ ] T041 [P] Create frontend/src/lib/api/tasks.ts with getTasks, getTask, createTask, updateTask, deleteTask, toggleTaskCompletion functions
+- [X] T039 [P] Create frontend/src/lib/api/client.ts with base API client that attaches JWT from Better Auth to Authorization header
+- [X] T040 [P] Create frontend/src/lib/api/auth.ts with signUp and signIn functions calling Better Auth
+- [X] T041 [P] Create frontend/src/lib/api/tasks.ts with getTasks, getTask, createTask, updateTask, deleteTask, toggleTaskCompletion functions
 
 ### Authentication Pages (US1)
 
-- [ ] T042 [US1] Create frontend/src/app/(auth)/signup/page.tsx with signup form (email, password, name)
-- [ ] T043 [US1] Create frontend/src/app/(auth)/signin/page.tsx with signin form (email, password)
-- [ ] T044 [US1] Create frontend/src/components/auth/AuthGuard.tsx that checks session and redirects to /signin if not authenticated
-- [ ] T045 [US1] Create frontend/src/components/layout/Navbar.tsx with user info and logout button
+- [X] T042 [US1] Create frontend/src/app/(auth)/signup/page.tsx with signup form (email, password, name)
+- [X] T043 [US1] Create frontend/src/app/(auth)/signin/page.tsx with signin form (email, password)
+- [X] T044 [US1] Create frontend/src/components/auth/AuthGuard.tsx that checks session and redirects to /signin if not authenticated
+- [X] T045 [US1] Create frontend/src/components/layout/Navbar.tsx with user info and logout button
 
 ### Task List & Create (US2, US3)
 
-- [ ] T046 [US2] Create frontend/src/app/(protected)/tasks/page.tsx with task list view, empty state, loading state
-- [ ] T047 [US2] Create frontend/src/components/tasks/TaskList.tsx component to display array of tasks
-- [ ] T048 [US2] Create frontend/src/components/tasks/TaskItem.tsx component for individual task display with completion toggle
-- [ ] T049 [US3] Create frontend/src/app/(protected)/tasks/new/page.tsx with task creation form
-- [ ] T050 [US3] Create frontend/src/components/tasks/TaskForm.tsx reusable form component for create/edit
+- [X] T046 [US2] Create frontend/src/app/(protected)/tasks/page.tsx with task list view, empty state, loading state
+- [X] T047 [US2] Create frontend/src/components/tasks/TaskList.tsx component to display array of tasks
+- [X] T048 [US2] Create frontend/src/components/tasks/TaskItem.tsx component for individual task display with completion toggle
+- [X] T049 [US3] Create frontend/src/app/(protected)/tasks/new/page.tsx with task creation form
+- [X] T050 [US3] Create frontend/src/components/tasks/TaskForm.tsx reusable form component for create/edit
 
 ### Task Detail, Update, Delete (US4, US5, US6)
 
-- [ ] T051 [US4] Create frontend/src/app/(protected)/tasks/[id]/page.tsx with task detail view
-- [ ] T052 [US5] Create frontend/src/app/(protected)/tasks/[id]/edit/page.tsx with task edit form using TaskForm component
-- [ ] T053 [US6] Add delete button to task detail page with confirmation dialog
+- [X] T051 [US4] Create frontend/src/app/(protected)/tasks/[id]/page.tsx with task detail view
+- [X] T052 [US5] Create frontend/src/app/(protected)/tasks/[id]/edit/page.tsx with task edit form using TaskForm component
+- [X] T053 [US6] Add delete button to task detail page with confirmation dialog
 
 ### Task Toggle (US7)
 
-- [ ] T054 [US7] Add toggle completion checkbox to TaskItem component that calls toggleTaskCompletion API
+- [X] T054 [US7] Add toggle completion checkbox to TaskItem component that calls toggleTaskCompletion API
 
 ### Layout & Error Handling
 
-- [ ] T055 [P] Create frontend/src/components/ui/LoadingState.tsx component for loading indicators
-- [ ] T056 [P] Create frontend/src/components/ui/ErrorState.tsx component for error messages
-- [ ] T057 Create frontend/src/app/layout.tsx with root layout including Navbar and AuthGuard for protected routes
-- [ ] T058 Update frontend/src/app/page.tsx to redirect authenticated users to /tasks, unauthenticated to /signin
+- [X] T055 [P] Create frontend/src/components/ui/LoadingState.tsx component for loading indicators
+- [X] T056 [P] Create frontend/src/components/ui/ErrorState.tsx component for error messages
+- [X] T057 Create frontend/src/app/layout.tsx with root layout including Navbar and AuthGuard for protected routes
+- [X] T058 Update frontend/src/app/page.tsx to redirect authenticated users to /tasks, unauthenticated to /signin
 
 ### Testing & Validation
 
-- [ ] T059 Test complete user flow: signup → signin → create task → view list → edit task → toggle completion → delete task
-- [ ] T060 Test user isolation: create two users, verify each sees only their own tasks
-- [ ] T061 Test error handling: invalid credentials, network errors, unauthorized access attempts
-- [ ] T062 Commit and push with tag phase-5-frontend-complete
+- [X] T059 Test complete user flow: signup → signin → create task → view list → edit task → toggle completion → delete task
+- [X] T060 Test user isolation: create two users, verify each sees only their own tasks
+- [X] T061 Test error handling: invalid credentials, network errors, unauthorized access attempts
+- [X] T062 Commit and push with tag phase-5-frontend-complete
 
 **Checkpoint**: Full application working end-to-end, all user stories functional
 
@@ -188,16 +188,16 @@
 
 **Dependencies**: Phase 5 complete
 
-- [ ] T063 [P] Add input validation to backend endpoints: title max 200 chars, required fields
-- [ ] T064 [P] Add client-side form validation to frontend forms: required fields, max lengths
-- [ ] T065 Update root README.md with complete setup instructions: prerequisites, environment setup, running locally
-- [ ] T066 [P] Create backend/README.md with backend-specific setup and API documentation
-- [ ] T067 [P] Create frontend/README.md with frontend-specific setup and component documentation
-- [ ] T068 [P] Add error logging to backend for debugging (structured logging with timestamps)
-- [ ] T069 Test all edge cases: session expiration, network failures, concurrent edits, malformed requests
-- [ ] T070 [OPTIONAL] Create backend/tests/test_tasks.py with basic unit tests for task endpoints
-- [ ] T071 [OPTIONAL] Create smoke test checklist in TESTING.md for manual validation
-- [ ] T072 Final commit and push with tag phase-6-complete
+- [X] T063 [P] Add input validation to backend endpoints: title max 200 chars, required fields
+- [X] T064 [P] Add client-side form validation to frontend forms: required fields, max lengths
+- [X] T065 Update root README.md with complete setup instructions: prerequisites, environment setup, running locally
+- [X] T066 [P] Create backend/README.md with backend-specific setup and API documentation
+- [X] T067 [P] Create frontend/README.md with frontend-specific setup and component documentation
+- [X] T068 [P] Add error logging to backend for debugging (structured logging with timestamps)
+- [X] T069 Test all edge cases: session expiration, network failures, concurrent edits, malformed requests
+- [X] T070 [OPTIONAL] Create backend/tests/test_tasks.py with basic unit tests for task endpoints
+- [X] T071 [OPTIONAL] Create smoke test checklist in TESTING.md for manual validation
+- [X] T072 Final commit and push with tag phase-6-complete
 
 **Checkpoint**: Production-ready application with documentation and validation
 

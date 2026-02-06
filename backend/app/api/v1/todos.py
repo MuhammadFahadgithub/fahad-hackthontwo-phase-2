@@ -234,3 +234,54 @@ async def delete_todo(
     session.commit()
 
     return {"message": "Todo deleted successfully"}
+
+
+@router.patch("/{todo_id}/toggle", response_model=TodoResponse, status_code=status.HTTP_200_OK)
+async def toggle_todo_completion(
+    todo_id: int,
+    current_user: dict = Depends(get_current_user),
+    session: Session = Depends(get_session)
+):
+    """
+    Toggle todo completion status.
+
+    Constitution Principle V: Ownership verification required
+
+    Args:
+        todo_id: Todo ID
+        current_user: Authenticated user from JWT
+        session: Database session
+
+    Returns:
+        TodoResponse with updated todo data
+
+    Raises:
+        HTTPException 401: Not authenticated
+        HTTPException 403: Not authorized (wrong owner)
+        HTTPException 404: Todo not found
+    """
+    # Get todo
+    todo = session.get(Todo, todo_id)
+
+    if not todo:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Todo not found"
+        )
+
+    # Verify ownership (Constitution Principle V)
+    if todo.user_id != current_user["id"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not authorized to update this todo"
+        )
+
+    # Toggle completion status
+    todo.completed = not todo.completed
+    todo.updated_at = datetime.utcnow()
+
+    session.add(todo)
+    session.commit()
+    session.refresh(todo)
+
+    return todo
